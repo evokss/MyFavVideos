@@ -13,7 +13,7 @@ const MainLayout = ({ children }) => {
       <MainHeader />
       <div className="flex justify-start items-start">
         <Sidebar />
-        <main className={`flex-1 ${open ? "hidden sm:flex-1" : "flex-1"}`}>
+        <main className={`flex-1 ${open ? "hidden sm:block" : "flex-1"}`}>
           {children}
         </main>
       </div>

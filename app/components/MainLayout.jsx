@@ -2,7 +2,7 @@
 
 import React, { useContext } from "react";
 import MainHeader from "./MainHeader";
-import Sidebar from "./layout/Sidebar";
+import Sidebar from "./sidebar/Sidebar";
 import { MenuContext } from "@/context/MenuContex";
 
 const MainLayout = ({ children }) => {

@@ -9,7 +9,7 @@ import { BsFileEarmarkPlay } from "react-icons/bs";
 import { RiPlayListLine } from "react-icons/ri";
 import { IoBulbOutline } from "react-icons/io5";
 
-const Sidebar1 = () => {
+const Sidebar = () => {
   const { open } = useContext(MenuContext);
 
   const sidebarItems = [
@@ -59,9 +59,9 @@ const Sidebar1 = () => {
 
   return (
     <aside
-      className={`bg-white rounded-r-lg overflow-hidden ${
-        open ? "w-60 p-4" : "w-0"
-      } lg:w-60 lg:p-4`}
+      className={`bg-white rounded-r-lg overflow-hidden fixed top-14 left-0 shadow-sm ${
+        open ? "w-60 p-4" : "w-0 p-0"
+      } lg:w-60 lg:p-4 mt-6`}
     >
       <ul>
         {sidebarItems.map((item) => (
@@ -79,4 +79,4 @@ const Sidebar1 = () => {
   );
 };
 
-export default Sidebar1;
+export default Sidebar;

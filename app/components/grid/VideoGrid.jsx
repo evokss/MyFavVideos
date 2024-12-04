@@ -1,8 +1,7 @@
 import React from "react";
 import VideoCard from "./VideoCard";
-import videoData from "../../../public/videoData.json";
 
-const VideoGrid = () => {
+const VideoGrid = ({ videoData }) => {
   return (
     <div className="p-6">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useContext } from "react";
-import MainHeader from "./MainHeader";
-import Sidebar from "./sidebar/Sidebar";
+import MainHeader from "../header/MainHeader";
+import Sidebar from "../sidebar/Sidebar";
 import { MenuContext } from "@/context/MenuContex";
 
 const MainLayout = ({ children }) => {

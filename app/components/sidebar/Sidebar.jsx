@@ -17,43 +17,49 @@ const Sidebar = () => {
       icon: <IoHomeOutline />,
       label: "Home",
       href: "/",
-      hoverColor: "blue",
+      hoverColor: "gray",
       margin: "ml-2",
+      cursor: "cursor-default",
     },
     {
       icon: <AiOutlineCompass />,
       label: "Explore",
       href: "/",
-      hoverColor: "orange",
+      hoverColor: "gray",
       margin: "ml-2",
+      cursor: "cursor-default",
     },
     {
       icon: <BsFileEarmarkPlay />,
       label: "Shorts",
       href: "/",
-      hoverColor: "orange",
+      hoverColor: "gray",
       margin: "ml-2",
+      cursor: "cursor-default",
     },
     {
       icon: <RiPlayListLine />,
       label: "Playlists",
       href: "/",
-      hoverColor: "orange",
+      hoverColor: "gray",
       margin: "ml-2",
+      cursor: "cursor-default",
     },
     {
       icon: <MdOutlineSubscriptions />,
       label: "Subscriptions",
       href: "/",
-      hoverColor: "orange",
+      hoverColor: "gray",
       margin: "ml-2",
+      cursor: "cursor-default",
     },
     {
       icon: <IoBulbOutline />,
       label: "About me",
-      href: "/",
+      href: "https://portfolio-website-evokss.vercel.app/",
       hoverColor: "pink",
       margin: "ml-2",
+      cursor: "cursor-pointer",
     },
   ];
 
@@ -72,6 +78,7 @@ const Sidebar = () => {
             href={item.href}
             hoverColor={item.hoverColor}
             margin={item.margin}
+            cursor={item.cursor}
           />
         ))}
       </ul>

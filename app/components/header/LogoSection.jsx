@@ -1,12 +1,12 @@
 "use client";
 
-import { MenuContext } from "@/context/MenuContex";
-import React, { useContext } from "react";
+import { useMenuContext } from "@/context/MenuContext";
+import React from "react";
 import { FcFilmReel } from "react-icons/fc";
 import { HiOutlineBars3 } from "react-icons/hi2";
 
 const LogoSection = () => {
-  const { menu } = useContext(MenuContext);
+  const { menu } = useMenuContext();
 
   return (
     <div className="flex items-center basis-1/4">

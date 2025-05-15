@@ -1,7 +1,6 @@
 "use client";
 
 import { useMenuContext } from "@/context/MenuContext";
-import React from "react";
 import { FcFilmReel } from "react-icons/fc";
 import { HiOutlineBars3 } from "react-icons/hi2";
 
@@ -10,14 +9,17 @@ const LogoSection = () => {
 
   return (
     <div className="flex items-center basis-1/4">
-      <div className="flex p-2 pr-0">
-        <HiOutlineBars3
+      <div className="flex p-2 pr-0 items-center">
+        <button
           onClick={menu.toggleMenu}
-          className="size-6 mr-4 cursor-pointer lg:hidden"
-        />
-        <FcFilmReel className="size-6 lg:flex-1" />
+          aria-label="Toggle navigation menu"
+          className="mr-4 cursor-pointer lg:hidden"
+        >
+          <HiOutlineBars3 className="size-6" />
+        </button>
+        <FcFilmReel className="size-6" aria-hidden="true" />
       </div>
-      <h1>MyFavVideos</h1>
+      <h1 className="text-lg font-semibold">MyFavVideos</h1>
     </div>
   );
 };

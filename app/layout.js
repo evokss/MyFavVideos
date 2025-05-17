@@ -1,6 +1,6 @@
 import MainLayout from "./components/layout/MainLayout";
 import "./styles/globals.css";
-import MenuProvider from "@/context/MenuContex";
+import MenuProvider from "@/context/MenuContext";
 
 export const metadata = {
   title: "My Favorite Videos",

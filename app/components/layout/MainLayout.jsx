@@ -3,10 +3,10 @@
 import React, { useContext } from "react";
 import MainHeader from "../header/MainHeader";
 import Sidebar from "../sidebar/Sidebar";
-import { MenuContext } from "@/context/MenuContex";
+import { useMenuContext } from "@/context/MenuContext";
 
 const MainLayout = ({ children }) => {
-  const { open } = useContext(MenuContext);
+  const { open } = useMenuContext();
 
   return (
     <div className="bg-gray-100 w-screen min-h-screen">

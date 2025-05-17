@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { MenuContext } from "@/context/MenuContex";
+import { useMenuContext } from "@/context/MenuContext";
 import SidebarItem from "./SidebarItem";
 
 import { IoHomeOutline } from "react-icons/io5";
@@ -10,7 +10,7 @@ import { RiPlayListLine } from "react-icons/ri";
 import { IoBulbOutline } from "react-icons/io5";
 
 const Sidebar = () => {
-  const { open } = useContext(MenuContext);
+  const { open } = useMenuContext();
 
   const sidebarItems = [
     {

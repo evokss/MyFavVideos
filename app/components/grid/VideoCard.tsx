@@ -1,6 +1,19 @@
-import React from "react";
+import React from 'react';
 
-const VideoCard = ({
+export interface VideoCardProps {
+  thumbnail: string;
+  videoLink: string;
+  videoTime: string;
+  profilePicture: string;
+  channelLink: string;
+  channelName: string;
+  subscribers: string;
+  videoTitle: string;
+  views: string;
+  uploaded: string;
+}
+
+const VideoCard: React.FC<VideoCardProps> = ({
   thumbnail,
   videoLink,
   videoTime,
@@ -20,6 +33,7 @@ const VideoCard = ({
             src={thumbnail}
             alt={videoTitle}
             className="w-full object-cover"
+            loading="lazy"
           />
           <span className="absolute bottom-2 right-2 bg-black text-white text-xs px-1 py-0.5 rounded">
             {videoTime}
@@ -31,8 +45,9 @@ const VideoCard = ({
           <div className="flex items-center gap-2">
             <img
               src={profilePicture}
-              alt={channelName}
+              alt={`${channelName} profile`}
               className="w-8 h-8 rounded-full"
+              loading="lazy"
             />
             <div>
               <h3 className="text-sm font-bold">{channelName}</h3>
@@ -53,5 +68,7 @@ const VideoCard = ({
     </div>
   );
 };
+
+VideoCard.displayName = 'VideoCard';
 
 export default VideoCard;

@@ -1,13 +1,17 @@
 import React from "react";
-import VideoCard from "./VideoCard";
+import VideoCard, { VideoCardProps } from "./VideoCard";
 
-const VideoGrid = ({ videoData }) => {
+interface VideoGridProps {
+  videoData: VideoCardProps[];
+}
+
+const VideoGrid: React.FC<VideoGridProps> = ({ videoData }) => {
   return (
     <div className="p-6">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {videoData.map((video, index) => (
+        {videoData.map((video) => (
           <VideoCard
-            key={index}
+            key={video.videoLink}
             thumbnail={video.thumbnail}
             videoLink={video.videoLink}
             videoTime={video.videoTime}
@@ -24,5 +28,7 @@ const VideoGrid = ({ videoData }) => {
     </div>
   );
 };
+
+VideoGrid.displayName = 'VideoGrid';
 
 export default VideoGrid;

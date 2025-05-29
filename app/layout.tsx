@@ -1,23 +1,38 @@
-import MainLayout from "./components/layout/MainLayout";
-import "./styles/globals.css";
-import MenuProvider from "@/context/MenuContext";
+"use client";
+import { ReactNode } from 'react';
+import { Metadata } from 'next';
+import MainLayout from '@/app/components/layout/MainLayout';
+import { MenuProvider } from '@/context/MenuContext';
+import './styles/globals.css';
 
-export const metadata = {
-  title: "My Favorite Videos",
+export const metadata: Metadata = {
+  title: 'My Favorite Videos',
   description:
-    "Check out a handpicked collection of YouTube videos in this clean, easy-to-use app built with TypeScript, React, Next.js, and Tailwind CSS.",
+    'A curated collection of YouTube videos in a clean, user-friendly app built with TypeScript, React, Next.js, and Tailwind CSS.',
   icons: {
-    icon: "/favicon.png",
+    icon: '/favicon.png',
+  },
+  openGraph: {
+    title: 'My Favorite Videos',
+    description: 'A curated collection of YouTube videos.',
+    url: 'https://my-fav-videos.vercel.app/',
   },
 };
 
-type RootLayoutProps = {
-  children: React.ReactNode;
-};
+interface RootLayoutProps {
+  children: ReactNode;
+}
 
-export default function RootLayout({ children }: RootLayoutProps) {
+/**
+ * RootLayout component that wraps the entire application with necessary providers
+ * and layout components.
+ * @param props - The component props
+ * @param props.children - The child components to render within the layout
+ * @returns The root layout with context providers and main layout
+ */
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <MenuProvider>
           <MainLayout>{children}</MainLayout>
@@ -25,4 +40,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

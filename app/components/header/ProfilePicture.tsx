@@ -26,7 +26,6 @@ const ProfilePicture: React.FC<ProfilePictureProps> = () => {
           width={IMAGE_SIZE}
           height={IMAGE_SIZE}
           priority={true}
-          loading="lazy"
         />
       </a>
     </div>

@@ -1,4 +1,3 @@
-"use client";
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import MainLayout from '@/app/components/layout/MainLayout';

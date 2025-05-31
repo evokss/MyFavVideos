@@ -11,7 +11,7 @@ interface LogoSectionProps {}
  * @returns The logo section with a toggle button and icon
  */
 const LogoSection: FC<LogoSectionProps> = () => {
-  const { open, toggleMenu } = useMenuContext();
+  const { toggleMenu } = useMenuContext();
 
   return (
     <div className="flex items-center basis-1/4">

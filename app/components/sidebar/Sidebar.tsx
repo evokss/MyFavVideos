@@ -1,21 +1,13 @@
 import React from 'react';
 import { useMenuContext } from '@/context/MenuContext';
 import SidebarItem from './SidebarItem';
+import { SidebarItemProps } from './SidebarItem';
 import { IoHomeOutline } from 'react-icons/io5';
 import { AiOutlineCompass } from 'react-icons/ai';
 import { MdOutlineSubscriptions } from 'react-icons/md';
 import { BsFileEarmarkPlay } from 'react-icons/bs';
 import { RiPlayListLine } from 'react-icons/ri';
 import { IoBulbOutline } from 'react-icons/io5';
-
-interface SidebarItemProps {
-  icon: React.ReactNode;
-  label: string;
-  href: string;
-  hoverColor: string;
-  margin: string;
-  cursor: string;
-}
 
 interface MenuContextType {
   open: boolean;

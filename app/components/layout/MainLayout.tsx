@@ -1,12 +1,20 @@
 "use client";
 
-import React, { useContext } from "react";
+import React from "react";
 import MainHeader from "../header/MainHeader";
 import Sidebar from "../sidebar/Sidebar";
 import { useMenuContext } from "@/context/MenuContext";
 
-const MainLayout = ({ children }) => {
-  const { open } = useMenuContext();
+interface MainLayoutProps {
+  children: React.ReactNode;
+}
+
+interface MenuContextType {
+  open: boolean;
+}
+
+const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+  const { open } = useMenuContext() as MenuContextType;
 
   return (
     <div className="bg-gray-100 w-screen min-h-screen">

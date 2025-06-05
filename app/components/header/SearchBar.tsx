@@ -1,24 +1,38 @@
-import React from "react";
-import { CiSearch } from "react-icons/ci";
+import React from 'react';
+import { CiSearch } from 'react-icons/ci';
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps {
+  placeholder?: string;
+  className?: string;
+  disabled?: boolean;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({
+  placeholder = 'Search',
+  className = '',
+  disabled = false,
+}) => {
   return (
-    <div className="hidden sm:flex flex-row items-center basis-1/2">
-      <div className="border border-zinc-300 rounded-l-full h-10 flex items-center flex-1">
+    <div
+      className={`hidden sm:flex flex-row items-center basis-1/2 ${className}`}
+      role="search"
+      aria-label="Search bar (display only)"
+    >
+      <div className="relative flex flex-1 items-center">
         <input
-          className="flex-grow border-0 focus:outline-none ml-4"
-          placeholder="Search"
           type="text"
+          placeholder={placeholder}
+          disabled={disabled}
+          className="h-10 w-full rounded-l-full border border-zinc-300 pl-4 pr-12 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+          aria-label="Search input (display only)"
         />
-      </div>
-      <button
-        className="border border-zinc-300 rounded-r-full border-l-0 h-10 cursor-default"
-        type="button"
-      >
-        <div className="py-2 pl-3 pr-5">
-          <CiSearch className="size-6" />
+        <div
+          className="absolute right-0 h-10 rounded-r-full border border-l-0 border-zinc-300 bg-white p-2 disabled:cursor-not-allowed disabled:opacity-50"
+          aria-label="Search icon (decorative)"
+        >
+          <CiSearch className="size-6 text-gray-600" />
         </div>
-      </button>
+      </div>
     </div>
   );
 };

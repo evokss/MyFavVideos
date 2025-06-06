@@ -27,7 +27,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           aria-label="Search input (display only)"
         />
         <div
-          className="absolute right-0 h-10 rounded-r-full border border-l-0 border-zinc-300 bg-white p-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="right-0 h-10 rounded-r-full border border-l-0 border-zinc-300 bg-white px-4 py-2 disabled:cursor-not-allowed disabled:opacity-50"
           aria-label="Search icon (decorative)"
         >
           <CiSearch className="size-6 text-gray-600" />
